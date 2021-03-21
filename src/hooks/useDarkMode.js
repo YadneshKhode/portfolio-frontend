@@ -15,7 +15,7 @@ export default () => {
   };
 
   const prefersDarkMode = useMedia(
-    ["(prefers-color-scheme: dark)"],
+    ["(prefers-color-scheme: light)"],
     [true],
     false
   );

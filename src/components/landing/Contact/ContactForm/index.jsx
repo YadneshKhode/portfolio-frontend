@@ -1,32 +1,37 @@
-import React from 'react';
-import axios from 'axios';
-import { Formik, Form, FastField, ErrorMessage } from 'formik';
-import * as Yup from 'yup';
-import { Button, Input } from 'components/common';
-import { Error, Center, InputField, Wrapper } from './styles';
+import React from "react";
+import axios from "axios";
+import { Formik, Form, FastField, ErrorMessage } from "formik";
+import * as Yup from "yup";
+import { Button, Input } from "components/common";
+import { Error, Center, InputField, Wrapper } from "./styles";
 
 export default () => (
   <Wrapper>
     <h2>Contact</h2>
     <Formik
       initialValues={{
-        name: '',
-        email: '',
-        message: '',
+        name: "",
+        email: "",
+        message: "",
         success: false,
       }}
       validationSchema={Yup.object().shape({
-        name: Yup.string().required('Full name field is required'),
-        email: Yup.string().email("Invalid email").required("Email field is required"),
-        message: Yup.string().required('Message field is required'),
+        name: Yup.string().required("Full name field is required"),
+        email: Yup.string()
+          .email("Invalid email")
+          .required("Email field is required"),
+        message: Yup.string().required("Message field is required"),
       })}
-      onSubmit={async ({ name, email, message }, { setSubmitting, resetForm, setFieldValue }) => {
+      onSubmit={async (
+        { name, email, message },
+        { setSubmitting, resetForm, setFieldValue }
+      ) => {
         try {
           await axios({
-            method: 'POST',
+            method: "POST",
             url: `${process.env.BACKEND_URL}`,
             headers: {
-              'Content-Type': 'application/json',
+              "Content-Type": "application/json",
             },
             data: JSON.stringify({
               name,
@@ -35,12 +40,12 @@ export default () => (
             }),
           });
           setSubmitting(false);
-          setFieldValue('success', true);
+          setFieldValue("success", true);
           setTimeout(() => resetForm(), 6000);
         } catch (err) {
           setSubmitting(false);
-          setFieldValue('success', false);
-          console.log(err)
+          setFieldValue("success", false);
+          console.log(err);
           alert("Something went wrong, please try again!"); // eslint-disable-line
         }
       }}
@@ -89,12 +94,20 @@ export default () => (
           {values.success && (
             <InputField>
               <Center>
-                <h4>Your message has been successfully sent, I will get back to you ASAP!</h4>
+                <h4>
+                  Your message has been successfully sent, I will get back to
+                  you ASAP!
+                </h4>
               </Center>
             </InputField>
           )}
           <Center>
-            <Button secondary type="submit" disabled={isSubmitting} className="submit-btn">
+            <Button
+              secondary
+              type="submit"
+              disabled={isSubmitting}
+              className="submit-btn"
+            >
               Submit
             </Button>
           </Center>
