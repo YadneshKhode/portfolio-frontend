@@ -17,7 +17,7 @@ export const Layout = ({ children }) => {
     <>
       <GatsbySeo
         title={`${name} | Portfolio`}
-        description="A personal portfolio website"
+        description="Yadnesh's portfolio website"
         canonical={url}
         openGraph={{
           type: "website",
@@ -25,7 +25,7 @@ export const Layout = ({ children }) => {
           site_name: `${name} | Portfolio`,
           locale: "en_IN",
           url,
-          description: "A personal portfolio website created",
+          description: "Yadnesh's portfolio website ",
           images: [
             {
               url:

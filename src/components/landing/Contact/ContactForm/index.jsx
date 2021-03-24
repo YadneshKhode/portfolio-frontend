@@ -41,7 +41,7 @@ export default () => (
           });
           setSubmitting(false);
           setFieldValue("success", true);
-          setTimeout(() => resetForm(), 6000);
+          setTimeout(() => resetForm(), 4000);
         } catch (err) {
           setSubmitting(false);
           setFieldValue("success", false);

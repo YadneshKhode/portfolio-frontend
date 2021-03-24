@@ -81,7 +81,7 @@ export const Projects = () => {
                 </p>
                 <br />
                 <p>
-                  <h4 className="tech">Technologies:</h4>
+                  <b className="tech">Technologies:</b>
                   React, Redux, React Hooks, Firebase and Stripe.
                 </p>
                 <h5>
@@ -122,7 +122,7 @@ export const Projects = () => {
                 </p>
                 <br />
                 <p>
-                  <h4 className="tech">Technologies:</h4>
+                  <b className="tech">Technologies:</b>
                   ReactJS, React Hooks, Firebase, NodeJS, ExpressJS, Socket.IO.
                 </p>
                 <h5>
@@ -162,7 +162,7 @@ export const Projects = () => {
                 </p>
                 <br />
                 <p>
-                  <h4 className="tech">Technologies:</h4>
+                  <b className="tech">Technologies:</b>
                   JavaScript, JSP, Spring.
                 </p>
                 <h5>
