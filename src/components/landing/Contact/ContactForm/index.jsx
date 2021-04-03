@@ -7,7 +7,7 @@ import { Error, Center, InputField, Wrapper } from "./styles";
 
 export default () => (
   <Wrapper>
-    <h2>Contact</h2>
+    <h2>CONTACT ME</h2>
     <Formik
       initialValues={{
         name: "",

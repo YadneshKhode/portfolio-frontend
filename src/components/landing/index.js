@@ -1,3 +1,4 @@
-export * from './Intro';
-export * from './Contact';
-export * from './Projects';
+export * from "./Intro";
+export * from "./Certification";
+export * from "./Contact";
+export * from "./Projects";
